@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <title>Portfolio André Barros</title>
+  </head>
+  <body>
+    
+    <div class="particulas"></div>
+
+
+    <nav class="navegacao">
+      <ul class="menu">
+        <li>
+          <a href="#inicio" class="menu-link">Início</a>
+        </li>
+
+        <li>
+          <a href="#sobre" class="menu-link">Sobre</a>
+        </li>
+
+        <li>
+          <a href="#projetos" class="menu-link">Projetos</a>
+        </li>
+
+        <li>
+          <a href="#contatos" class="menu-link">Contato</a>
+        </li>
+      </ul>
+    </nav>
+    <main id="inicio" class="cabecalho">
+      
+        <img
+          src="./img/andre.png"
+          alt="Foto Andre Barros"
+          class="foto-perfil"/>
+        <h1>Andre Barros</h1>
+        <p class="cabecalho-sub-titulo">Desenvolvedor Front End</p>
+     
+    </main>
+
+    <section id="sobre" class="sobre">
+      <h2 class="sobre-titulo">Sobre Mim</h2>
+      <div class="sobre-caixa">
+        <p class="sobre-paragrafo">
+          Olá Sou um desenvolvedor front-and apaixonado por criar web únicas e
+          memoráveis. Combino código limpo com design moderno para desenvolver
+          sites que não só funcionam, mas também impressionam visualmente.
+        </p>
+      </div>
+    </section>
+
+    <section id="projetos" class="projetos">
+        <h2 class="projetos-titulo">Meus Projetos</h2>
+        <div class="projetos-caixa">
+           
+            <div class="projetos-card">
+               <a href="https://andrebarroscg.github.io/siteanimado/"><img src="./img/projeto01.jpg" alt="projeto 1" class="projetos-imagem"></a>
+                <div class="caixa-textos-projetos">
+                  <h3 class="info-projetos">Loja de Carros</h3>
+                  <p class="paragrafo-projetos">Loja virtual moderna com animação suave e design responsivo para uma loja de carros</p>
+                  
+                </div> 
+              </div>
+
+            <div class="projetos-card">
+              
+                <a href="https://andrebarroscg.github.io/ToDoList/"><img src="./img/projeto02.jpg" alt="projeto 1" class="projetos-imagem"></a>
+                <div class="caixa-textos-projetos">
+                  <h3 class="info-projetos">To Do List</h3>
+                  <p class="paragrafo-projetos">Lista de objetos para lembrar quando for necessário</p>
+              </div>
+            </div>
+
+            <div class="projetos-card">
+              <a href="https://andrebarroscg.github.io/FormularioCadastro/"><img src="./img/projeto03.jpg" alt="projeto 1" class="projetos-imagem"></a>
+                <div class="caixa-textos-projetos">
+                  <h3 class="info-projetos">Formulário</h3>
+                  <p class="paragrafo-projetos">Formulário de Cadastro de pessoa com cadastro de senha</p>
+              </div>
+            </div>
+
+            <div class="projetos-card">
+              <a href="https://andrebarroscg.github.io/EnderecoPeloCEP/"><img src="./img/projeto04.jpg" alt="projeto 1" class="projetos-imagem"></a>
+                <div class="caixa-textos-projetos">
+                  <h3 class="info-projetos">Busca por CEP</h3>
+                  <p class="paragrafo-projetos">Formulário de pesquisa de endereço por CEP</p>
+              </div>
+            </div>
+
+            <div class="projetos-card">
+              <a href="https://andrebarroscg.github.io/Calculadora-/"><img src="./img/projeto05.jpg" alt="projeto 1" class="projetos-imagem"></a>
+                <div class="caixa-textos-projetos">
+                  <h3 class="info-projetos">Calculadora</h3>
+                  <p class="paragrafo-projetos">Estudo de Javascript, desenvolvimento de uma calculadora</p>
+              </div>
+            </div>
+
+            <div class="projetos-card">
+              <a href="https://andrebarroscg.github.io/Patela-de-Cores/"><img src="./img/projeto06.jpg" alt="projeto 1" class="projetos-imagem"></a>
+                <div class="caixa-textos-projetos">
+                  <h3 class="info-projetos">Paleta de Cores</h3>
+                  <p class="paragrafo-projetos">Estudo de Javascript, desenvolvimento de uma paleta de cores</p>
+              </div>
+            </div>
+
+
+
+
+
+
+
+
+    </section>
+
+    <section id="contatos" class="contatos">
+        <h2 class="contatos-titulo">Entre em Contatos</h2>
+       
+        <form class="formulario-contato" id="formulario" onsubmit="enviarWhats(event)">
+            <div class="grupo-form">
+            <input placeholder="Digite seu nome" class="campo-form" id="nome">
+        </div>
+       
+        <div class="grupo-form">
+            <textarea class="campo-form" placeholder="Digite sua mensagem" rows='6' id="mensagem"></textarea>
+        </div>   
+
+        <button type="submit" class="botao-form">Enviar WhatsApp</button>
+      
+      </form>
+    </section>
+    <script>
+
+      function enviarWhats(event) {
+        event.preventDefault();
+      const nome = document.getElementById('nome').value;
+      const mensagem = document.getElementById('mensagem').value;
+      const telefone = '5583986254870';
+
+      const texto = `Olá me chamo ${nome}, ${mensagem}`;
+      const msFormatada = encodeURIComponent(texto);
+      const url = `https://wa.me/${telefone}?text=${msFormatada}`;
+
+      console.log(url);
+
+      window.open(url, '_blank');
+      }
+
+    </script>
+  </body>
+</html>
